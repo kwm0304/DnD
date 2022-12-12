@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "name": "dnd",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwm0304/DnD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwm0304/DnD/issues"
+  },
+  "homepage": "https://github.com/kwm0304/DnD#readme"
+}
