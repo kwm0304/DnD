@@ -26,6 +26,11 @@ let GroupSchema = new mongoose.Schema({
         minLength: 8,
         maxLength: 2000
     }],
+    dungeonMaster: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    
     })
 
     let Group = model("Group", GroupSchema)
