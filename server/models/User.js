@@ -2,7 +2,7 @@
 const { Schema, model } = require('mongoose')
 const bcrypt = require ('bcrypt')
 
-const userSchema = new Schema(
+const UserSchema = new Schema(
     {
         username: {
             type: String,
@@ -31,3 +31,6 @@ const userSchema = new Schema(
           }]
     }
 )
+
+let User = model("User", UserSchema)
+module.exports = User

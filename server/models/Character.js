@@ -1,5 +1,6 @@
 const {Schema, model } = require('mongoose')
 
+
 let CharacterSchema = new Schema ({
     name: {
         type: String,
@@ -10,30 +11,38 @@ let CharacterSchema = new Schema ({
         type: String,
         allowNull: false
     },
+    //Combined need to be 75
     stats: {
         strength: {
             type: Number,
-            required: true
+            required: true,
+            max: 15
         },
         dexterity: {
             type: Number,
             required: true,
+            max: 15
         },
         constitution: {
             type: Number,
-            required: true
+            required: true,
+            max: 15
         },
         intellegence: {
             type: Number,
-            required: true
+            required: true,
+            max: 15
+
         },
         wisdom: {
             type: Number,
-            required: true
+            required: true,
+            max: 15
         },
         charisma: {
             type: Number,
-            required: true
+            required: true,
+            max: 15
         }
 },
 spells: [{
@@ -51,6 +60,12 @@ passivePerception: {
 weapons: {
     type: String,
     required: true
-}
+},
+background: {
+    type: String,
+    required: true
+},
 
 })
+let Character = model("Character", CharacterSchema)
+module.exports = Character
