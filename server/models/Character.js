@@ -11,6 +11,10 @@ let CharacterSchema = new Schema ({
         type: String,
         allowNull: false
     },
+    class: {
+        type: String,
+        allowNull: false
+    },
     //Combined need to be 75
     stats: {
         strength: {
