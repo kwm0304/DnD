@@ -6,7 +6,22 @@ body {
   background: #FFF;
  
 }
-
+#navbar{
+  background-color: turquoise;
+  position: fixed; 
+  display: flex; 
+  justify-content: flex-end; 
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  z-index: 20; 
+}
+.nav-lins{
+  margin: 0; 
+    padding: 15px;
+    color: #264c5e; 
+    text-decoration: none; 
+}
 .sidenav {
   height: 100%;
   background-color: #264c5e;
