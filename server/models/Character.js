@@ -28,7 +28,7 @@ let CharacterSchema = new Schema ({
             required: true,
             max: 15
         },
-        intellegence: {
+        intelligence: {
             type: Number,
             required: true,
             max: 15
