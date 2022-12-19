@@ -6,6 +6,7 @@ query character($username: String) {
         _id
         name
         race
+        class
         stats {
             strength
             dexterity

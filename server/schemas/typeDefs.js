@@ -13,6 +13,7 @@ type Character {
     _id: ID
     name: String
     race: String
+    class: String
     stats: Int
     spells: String
     proficiencyBonus: Int
