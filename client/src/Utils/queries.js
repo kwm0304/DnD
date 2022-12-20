@@ -28,7 +28,6 @@ query user($username: String!) {
     user(username: $username) {
         _id
         username
-        email
         characters{
             name
             stats
@@ -46,7 +45,6 @@ export const QUERY_ME = gql`
     me {
         _id
         username
-        email
         character
         group {
             name
