@@ -1,25 +1,10 @@
 import { gql } from '@apollo/client'
 
-export const QUERY_CHARACTER = gql`
-query character($username: String) {
-    character(username: $username) {
-        _id
+export const QUERY_CHARACTERS = gql`
+query allCharacters {
+    allCharacters{
+        image
         name
-        race
-        class
-        stats {
-            strength
-            dexterity
-            constitution
-            intelligence
-            wisdom
-            charisma
-        }
-        spells
-        proficiencyBonus
-        passivePerception
-        weapons
-        background
     }
 }`;
 
@@ -32,25 +17,54 @@ query user($username: String!) {
             name
             stats
         }
-        groups {
-            name
-            notes
-            dungeonMaster
-        }
     }
 }`
 
 export const QUERY_ME = gql`
-{
+query me {
     me {
         _id
         username
-        character
-        group {
+        characters {
+            _id
             name
-            users
-            notes
-            dungeonMaster
+            race
+            image
+            class
+            background
+            proficiencyBonus
+            passivePerception
+            strength
+            dexterity
+            constitution
+            intelligence
+            wisdom
+            charisma
+            level
+            spells
+            weapons
         }
+    }
+}`
+
+export const QUERY_MY_CHARACTERS = gql`
+query userCharacter {
+    userCharacter {
+        name
+        race
+        image
+        class
+        background
+    }
+}`
+
+export const QUERY_ONE_CHARACTER = gql`
+query character($characterId: ID) {
+    character(characterId: $characterId) {
+        name
+        race
+        class
+        weapons
+        image
     }
 }`

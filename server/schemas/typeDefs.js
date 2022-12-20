@@ -1,8 +1,8 @@
 const { gql } = require('apollo-server-express')
-
+//! after property means non-null in gql
 const typeDefs = gql`
 type User {
-    _id: ID
+    _id: ID!
     username: String
     password: Mixed
     character: [Character]
@@ -10,29 +10,64 @@ type User {
 
 type Character {
     _id: ID
-    name: String
+    name: String!
+    user: User
     race: String
+    image: String
     class: String
-    stats: Int
+    strength: Int
+    dexterity: Int
+    constitution: Int
+    intelligence: Int
+    wisdom: Int
+    Charisma: Int
+    level: Int
+    hitPoints: Int
+    alignment: String
     spells: String
     proficiencyBonus: Int
     passivePerception: Int
     weapons: String
     background: String
 
-type Group {
-    _id: ID
-    name: String
-    date: String
-    users: [User]
-    characters: [Character]
-    notes: String
-    dungeonMaster: [User]
+    input update {
+        name: String!
+        race: String
+        image: String
+        class: String
+        background: String
+        strength: Int
+        dexterity: Int
+        constitution: Int
+        intelligence: Int
+        wisdom: Int
+        charisma: Int
+        level: Int
+        hitPoints: Int
+        alignment: String
+        items: String
+        weapons: String
+      }
+    }
+
+type Auth {
+    token: ID!
+    user: User
 }
 
 type Query {
-
+    me: User
+    allCharacters: [Character]
+    oneCharacter:(characterId: ID): Character
+    userCharacter: [Character]
 }
+
+type Mutation: {
+    createUser(username: String, password: String): Auth
+    login(password: String!): Auth
+    deleteCharacter(characterId: ID): User
+    createCharacter(update: update): User
+    updateCharacter(characterId: ID, update: update): User 
 }`
 
 module.exports = typeDefs;
