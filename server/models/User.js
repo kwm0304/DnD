@@ -19,10 +19,6 @@ const UserSchema = new Schema(
             type: Schema.ObjectId,
             ref: "Character"
           }],
-          groups: [{
-            type: Schema.Types.ObjectId,
-            ref: 'User'
-          }]
     }
 )
 

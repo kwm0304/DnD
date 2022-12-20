@@ -1,3 +1,4 @@
+// 20 sided dice
 import React, { useState } from "react";
 
 function DiceRoller() {
