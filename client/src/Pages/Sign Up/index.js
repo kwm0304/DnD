@@ -1,15 +1,15 @@
 // module 21 MERN
 
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
   const [addUser, { error }] = useMutation(ADD_USER);
 
