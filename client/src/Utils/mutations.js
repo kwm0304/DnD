@@ -14,9 +14,9 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+export const NEW_USER = gql`
+  mutation createUser($username: String!, $password: String!) {
+    createUser(username: $username, password: $password) {
       token
       user {
         _id
@@ -26,29 +26,52 @@ export const ADD_USER = gql`
   }
 `;
 
-// export const ADD_FRIEND = gql`
-//   mutation addFriend($id: ID!) {
-//     addFriend(friendId: $id) {
-//       _id
-//       username
-//       friendCount
-//       friends {
-//         _id
-//         username
-//       }
-//     }
-//   }
-// `;
+export const NEW_CHARACTER = gql`
+mutation createCharacter($update: update) {
+  createCharacter(update: $update) {
+    username
+    password
+    characters {
+      name
+      race
+      image
+      class
+      background
+      strength
+      dexterity
+      constitution
+      intelligence
+      wisdom
+      charisma
+      level
+      hitPoints
+      weapons
+      alignment
+      proficiencyBonus
+      passivePerception
+      user {
+        username
+      }
+      items
+    }
+  }
+}`
 
-// export const REMOVE_FRIEND = gql`
-//   mutation removeFriend($id: ID!) {
-//     removeFriend(id: $id) {
-//       _id
-//       username
-//       friends {
-//         _id
-//         username
-//       }
-//     }
-//   }
-// `;
+export const UPDATE_CHARACTER = gql`
+mutation updateCharacter($characterId: ID, $update: update) {
+  updateCharacter(
+    characterId: $characterId
+    update: $update
+  )
+  {
+    username
+  }
+}`
+
+export const DELETE_CHARACTER = gql`
+mutation deleteCharacter($characterId: ID) {
+  deleteCharacter(characterId: $characterId) {
+    username
+  }
+}`
+
