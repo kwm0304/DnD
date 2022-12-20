@@ -8,9 +8,14 @@ import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
+<<<<<<< HEAD:client/dnd-reference/src/Pages/Sign Up/index.js
     username: "",
     email: "",
     password: "",
+=======
+    username: '',
+    password: '',
+>>>>>>> 135d76c3f7524659ea7aa45fbde5247bab70a231:client/src/Pages/Sign Up/index.js
   });
   const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -58,7 +63,7 @@ const Signup = () => {
               <input
                 className="form-input"
                 placeholder="Your email"
-                name="email"
+                name="username"
                 type="email"
                 id="email"
                 value={formState.email}
