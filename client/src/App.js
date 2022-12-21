@@ -72,10 +72,10 @@ function App() {
                   value={result}
                 />
               </Route>
-              <Route exact path="/login/index">
+              <Route exact path="/Login/index">
                 <Login />
               </Route>
-              <Route exact path="/signup/index">
+              <Route exact path="/Signup/index">
                 <Signup />
               </Route>
               <Route exact path="/DiceRoller/index">
