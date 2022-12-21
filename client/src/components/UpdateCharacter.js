@@ -42,7 +42,6 @@ const UpdateCharacter = (props) => {
       const { name, value } = event.target;
       setFormState({ ...formState, [name]: value });
     };
-  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -83,5 +82,5 @@ const UpdateCharacter = (props) => {
       <input type="number" name="proficiencyBonus" value={formState.proficiencyBonus} onChange={handleChange} />
       </form>
       )
-
+  }
       export default UpdateCharacter
