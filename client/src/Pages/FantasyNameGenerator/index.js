@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
+import { UPDATE_CHAR } from "../utils/mutations";
 
 const fantasyNameList = [
   "Aurora",
@@ -39,11 +42,15 @@ function FantasyNameGenerator() {
   };
 
   return (
-    <div>
-      <h1>Fantasy Name Generator</h1>
-      <button onClick={handleNameGeneration}>Generate Name</button>
-      <p>{fantasyName}</p>
-    </div>
+    <main className="flex-row justify-center mb-4">
+      <div className="card">
+        <h1 className="card-header bg-dark text-light p-2">
+          Fantasy Name Generator
+        </h1>
+        <button onClick={handleNameGeneration}>Generate Name</button>
+        <p>{fantasyName}</p>
+      </div>
+    </main>
   );
 }
 
