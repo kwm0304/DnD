@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function CharacterSheet() {
@@ -22,7 +22,7 @@ function CharacterSheet() {
         <Form.Control 
         type="text" placeholder="" name='class' value={formState.class} onChange={handleChange}/>
       </Form.Group>
-//Need to fill out rest of stats in character model
+{/* //Need to fill out rest of stats in character model */}
       <Form.Group className="mb-3" controlId="characterstats">
         <Form.Label>Character Stats</Form.Label>
         <Form.Control 
