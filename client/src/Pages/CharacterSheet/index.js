@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {formState, handleChange } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
@@ -21,6 +21,11 @@ function CharacterSheet() {
         <Form.Label>Character Class</Form.Label>
         <Form.Control 
         type="text" placeholder="" name='class' value={formState.class} onChange={handleChange}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="characterImage">
+        <Form.Label>Image</Form.Label>
+        <Form.Control 
+        type="text"  name='image' value={formState.image} onChange={handleChange}/>
       </Form.Group>
 //Need to fill out rest of stats in character model
       <Form.Group className="mb-3" controlId="characterstats">
