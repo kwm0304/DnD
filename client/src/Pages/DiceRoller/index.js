@@ -1,22 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
-import { gql } from '@apollo/client';
+import { DiceRoll } from "@dice-roller/rpg-dice-roller";
 
-function DiceRoller() {
-  const [dice, setDice] = useState(1);
-
-  function rollDice() {
-    setDice(Math.floor(Math.random() * 20) + 1);
-  }
+const DiceRoller = () => {
+  const rollDice = () => {
+    const roll = new DiceRoll("4d6dl1");
+    console.log(roll.output);
+  };
 
   return (
     <Form className="flex-row justify-center">
       <Form.Group className="card">
         <button onClick={rollDice}>Roll dice</button>
-        <p>Result: {dice}</p>
       </Form.Group>
     </Form>
   );
-}
+};
 
 export default DiceRoller;
