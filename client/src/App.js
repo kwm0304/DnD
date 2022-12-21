@@ -1,17 +1,17 @@
 import { React, useState } from 'react';
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router,  Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Login from './Pages/Login/login';
-import Header from './components/Header/index';
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Profile from './pages/Profile';
-import CreateChar from './pages/CreateChar';
+import Header from './components/Header';
+import Home from './Pages/home';
+import Signup from './Pages/SignUp';
+import Profile from './Pages/Profile';
+import CharacterSheet from './Pages/CharacterSheet';
 import UpdateCharacter from './components/UpdateCharacter';
-import diceRoller from './Pages/DiceRoller'
 import DiceRoller from './Pages/DiceRoller';
 // import { QUERY_CHAR } from './utils/queries';
 
@@ -59,7 +59,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Switch>
+        <Routes>
           <div className="flex-column justify-flex-start min-100-vh">
             <Header
               value={search}
@@ -90,7 +90,7 @@ function App() {
               <Route exact path="/updateCharacter" component={UpdateCharacter} />
             </div>
           </div>
-        </Switch>
+        </Routes>
       </Router>
     </ApolloProvider>
   )

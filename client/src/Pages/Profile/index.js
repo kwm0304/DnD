@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { Redirect, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import Characters from '../components/CharacterList/Characters';
-import UpdateChar from '../components/UpdateChar';
-import Auth from '../utils/auth';
-import { QUERY_USER_CHAR, QUERY_ME } from '../utils/queries';
+import Character from '../../components/Character';
+import UpdateCharacter from '../../components/UpdateCharacter';
+import Auth from '../../Utils/auth';
+import { QUERY_USER_CHARACTER, QUERY_ME } from '../../Utils/queries';
 import { QUERY_MY_CHARACTERS } from '../../Utils/queries';
 
 
@@ -65,7 +65,7 @@ const Profile = () => {
                   <div className="lead fw-normal mb-0 galleryhead">Recent characters</div>
                   <div className="mb-0 expand"><a href="#!" className="text-muted">Show all</a></div>
                 </div>
-                <Characters>characters={user.characters}</Characters>
+                <Character>character={user.character}</Character>
               </section>
             </div>
           </div>
