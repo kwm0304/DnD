@@ -1,6 +1,7 @@
 // 20 sided dice
 // help from module 20
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 function DiceRoller() {
   const [dice, setDice] = useState(1);
@@ -10,12 +11,12 @@ function DiceRoller() {
   }
 
   return (
-    <main>
-      <div>
+    <Form className="">
+      <Form.Group className="">
         <button onClick={rollDice}>Roll dice</button>
         <p>Result: {dice}</p>
-      </div>
-    </main>
+      </Form.Group>
+    </Form>
   );
 }
 
