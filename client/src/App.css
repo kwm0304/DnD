@@ -18,3 +18,27 @@ margin: 100px 100px 100px;
   border: solid;
   border-color:aliceblue;
 }
+#text {
+  font-size: 15;
+}
+#header, h1, header p {
+  font-size: 15px;
+  margin: 5px 0px 0px 50px;
+  color:aliceblue;
+  background-color: #264c5e;
+}
+#formTitle {
+  font-family: georgia;
+}
+
+#profileHeader {
+  color: aliceblue;
+}
+#charForm {
+  background-color: lightblue;
+  flex-direction: column;
+  display: flex;
+  max-width: 300px;
+  padding: 20px;
+}
+
