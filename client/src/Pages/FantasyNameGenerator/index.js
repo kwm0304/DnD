@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
+import { useMutation } from "@apollo/client";
+import { UPDATE_CHAR } from "../utils/mutations";
 
 const fantasyNameList = [
   "Aurora",
