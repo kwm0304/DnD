@@ -4,7 +4,7 @@ import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@ap
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Login from './pages/Login';
+import Login from './Pages/Login/login';
 import Header from './components/Header/index';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
@@ -12,7 +12,6 @@ import Profile from './pages/Profile';
 import CreateChar from './pages/CreateChar';
 import UpdateCharacter from './components/UpdateCharacter';
 import diceRoller from './Pages/DiceRoller'
-import UpdateCharacter from './components/UpdateCharacter';
 import DiceRoller from './Pages/DiceRoller';
 // import { QUERY_CHAR } from './utils/queries';
 
