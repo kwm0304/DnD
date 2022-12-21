@@ -10,8 +10,10 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import CreateChar from './pages/CreateChar';
-import UpdateChar from './components/UpdateChar';
+import UpdateCharacter from './components/UpdateCharacter';
 import diceRoller from './Pages/DiceRoller'
+import UpdateCharacter from './components/UpdateCharacter';
+import DiceRoller from './Pages/DiceRoller';
 // import { QUERY_CHAR } from './utils/queries';
 
 const httpLink = createHttpLink({
@@ -77,13 +79,16 @@ function App() {
               <Route exact path="/signup">
                 <Signup />
               </Route>
+              <Route exact path="/diceRoller">
+                <DiceRoller />
+              </Route>
               <Route exact path="/profile">
                 <Profile />
               </Route>
               <Route exact path="/createCharacter">
-                <CreateChar />
+                <CharacterSheet />
               </Route>
-              <Route exact path="/updateCharacter" component={UpdateChar} />
+              <Route exact path="/updateCharacter" component={UpdateCharacter} />
             </div>
           </div>
         </Switch>
