@@ -11,7 +11,7 @@ const header = ({value, handleInputChange, handleFormSubmit }) => {
     };
     return (
         <header id="header">
-            <div id="nav">
+            <div id="navbar">
             <div style={{ marginLeft: "20px", display: "flex", flexDirection: "column" }}>
           <Link className="text-light" style={{ textDecoration: "none" }} to="/">
             <h1 className="m-0" style={{ color: "#264c5e" }}><FontAwesomeIcon icon={faDragon} /> DnD Slayers</h1>
@@ -20,9 +20,9 @@ const header = ({value, handleInputChange, handleFormSubmit }) => {
 
           <div id="button"><Link className="btn btn-lg btn-info m-2" to="/"> Home </Link>
               <Link className="btn btn-lg btn-info m-2" to="/profile">
-                {Auth.getProfile().data.username}'s Dashboard
+                {Auth.getProfile().data.username}'s Profile
               </Link>
-              <Link className="btn btn-lg btn-info m-2" to="/createChar">Create Character</Link>
+              <Link className="btn btn-lg btn-info m-2" to="/createCharacters">Create Characters</Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
