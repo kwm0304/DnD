@@ -58,14 +58,16 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+      <div className="flex-column justify-flex-start min-100-vh">
+      <div style={{ maxWidth: "fit-content", margin: "0 auto", minWidth: "170px" }}>
         <Switch>
-          <div className="flex-column justify-flex-start min-100-vh">
+          
             <Header
               value={search}
               handleInputChange={handleInputChange}
               handleFormSubmit={handleFormSubmit}
             />
-            <div style={{ maxWidth: "fit-content", margin: "0 auto", minWidth: "170px" }}>
+            
               <Route exact path="/">
                 <Home
                   value={result}
@@ -73,10 +75,10 @@ function App() {
               </Route>
 
 
-              <Route exact path="/Login/index">
+              <Route exact path="/Login">
                 <Login />
               </Route>
-              <Route exact path="/Signup/index">
+              <Route exact path="/Signup">
 
                 <Signup />
               </Route>
@@ -90,9 +92,10 @@ function App() {
                 < CharacterSheet/>
               </Route>
               <Route exact path="/UpdateCharacter" component={UpdateCharacter} />
-            </div>
-          </div>
+            
         </Switch>
+        </div>
+          </div>
       </Router>
     </ApolloProvider>
   )

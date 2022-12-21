@@ -1,41 +1,32 @@
-const express = require("express");
-const { ApolloServer } = require('apollo-server-express')
+const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
+const path = require('path');
+require('dotenv').config()
+const { typeDefs, resolvers } = require('./schemas');
+const { authMiddleware } = require('./utils/auth');
+const db = require('./config/connection');
 
-const { typeDefs, resolvers } = require ('./schemas')
-const db = require('./config/connection')
 
-const router = require("./routes")
-const passport = require("passport");
-const session = require("express-session");
-
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: authMiddleware,
+});
 
-// Passport Config 
-require('./config/passport')(passport);
+server.applyMiddleware({ app });
 
-// Session middleware
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(session({
-  secret: "test",
-  resave: false,
-  saveUninitialized: false
-}));
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/App.js'))
-})
-
-// Define API routes here
-require("./routes/dndRoutes")(app);
-app.use(router)
-
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 db.once('open', () => {
   app.listen(PORT, () => {
