@@ -10,10 +10,12 @@ function DiceRoller() {
   }
 
   return (
-    <div>
-      <button onClick={rollDice}>Roll dice</button>
-      <p>Result: {dice}</p>
-    </div>
+    <main>
+      <div>
+        <button onClick={rollDice}>Roll dice</button>
+        <p>Result: {dice}</p>
+      </div>
+    </main>
   );
 }
 
