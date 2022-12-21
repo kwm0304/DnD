@@ -71,10 +71,13 @@ function App() {
                   value={result}
                 />
               </Route>
-              <Route exact path="/Login">
+
+
+              <Route exact path="/Login/index">
                 <Login />
               </Route>
-              <Route exact path="/Signup">
+              <Route exact path="/Signup/index">
+
                 <Signup />
               </Route>
               <Route exact path="/Profile">

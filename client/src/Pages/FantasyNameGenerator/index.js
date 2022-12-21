@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 
 const fantasyNameList = [
   "Aurora",
@@ -39,11 +40,15 @@ function FantasyNameGenerator() {
   };
 
   return (
-    <div>
-      <h1>Fantasy Name Generator</h1>
-      <button onClick={handleNameGeneration}>Generate Name</button>
-      <p>{fantasyName}</p>
-    </div>
+    <Form className="flex-row justify-center mb-4">
+      <Form.Group className="card">
+        <Form.Label className="card-header bg-dark text-light p-2">
+          Fantasy Name Generator
+        </Form.Label>
+        <button onClick={handleNameGeneration}>Generate Name</button>
+        <p>{fantasyName}</p>
+      </Form.Group>
+    </Form>
   );
 }
 

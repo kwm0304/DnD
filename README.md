@@ -1,4 +1,10 @@
-# Interactive MERN Stack Single-Page Application
+![Alt text](/client/public/assets/logo.png "D&D Logo")
+# Interactive MERN Stack Single-Page Application: Dungeons & Dragons
+
+## Introduction
+Do you daydream about being transported to a magical world where you can be anyone you want? Do you like creative thinking and problem solving? Do you want to be a murder hobo and kill some NPCs? Well, then the roleplaying game [Dungeons & Dragons](https://www.youtube.com/watch?v=hS208QGIv0U&list=PLj-th81xdZwhxi2fO6xOxFjZCcvkSkIqM&index=3) might be for you!
+
+![Alt text](/client/public/assets/gif.webp "Hilarious gif")
 
 ## Project Requirements
 ```
@@ -30,3 +36,37 @@ Have a clean repository that meets quality coding standards (file structure, nam
 
 Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
+
+## Mock Up
+
+## Installation
+Dependencies used:
+- Apollo-Server-Express
+- Bcrypt
+- Bootstrap
+- Concurrently
+- Express
+- Faker
+- GraphQL
+- JSON Web Token
+- Mongoose
+- Nodemon
+
+Clone this repository using:
+```
+git clone git@github.com:kwm0304/DnD.git
+```
+
+Install the dependencies using:
+```
+npm i
+```
+
+## Usage
+
+## Collaborators
+- [Dejah Harris](https://github.com/DejahHarris)
+- [Naomi Roznik](https://github.com/n-roz)
+- [Connor Kelly](https://github.com/connorkelly96)
+- [Kenan McKenzie](https://github.com/kwm0304)
+- [Chris Torres](https://github.com/ctorre-21)

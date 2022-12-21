@@ -14,7 +14,7 @@ const Home = ({ value }) => {
     const character = dataD?.character || [];
     console.log(character.name);
     return (
-        <main>
+        <main className="text-blue-100 bg-blue-500 body-font">
             <div id="backgroundColor">
                 <h2 id="homeTitle">
                     Welcome to DnD Slayers! We are here to meet all your Dungeon and Dragons needs. Let's get you started on your DnD journey! Please log in or register for access to start creating your characters and utilize our dice roller. {" "}
