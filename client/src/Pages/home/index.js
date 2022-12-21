@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { QUERY_CHARACTERS, QUERY_ONE_CHARACTER } from "../utils/queries";
-
+import { QUERY_CHARACTERS, QUERY_ONE_CHARACTER } from "../../Utils/queries";
+import Character from '../../components/Character'
 const Home = ({ value }) => {
     // PULL CHARACTER LIST
     const { loading, data } = useQuery(QUERY_CHARACTERS);
@@ -43,5 +43,5 @@ const Home = ({ value }) => {
     );
 };
 
-export default home;
+export default Home;
 

@@ -1,7 +1,7 @@
 // Search Result componenet
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-
+//https://www.freecodecamp.org/news/search-and-filter-component-in-reactjs/ and module 20 3.5 are my sources
 const SearchChar = ({ character }) => {
   console.log(!character.name);
 

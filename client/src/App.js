@@ -1,17 +1,17 @@
 import { React, useState } from 'react';
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router,  Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Login from './Pages/Login/login';
-import Header from './components/Header/index';
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Profile from './pages/Profile';
-import CreateChar from './pages/CreateChar';
+import Header from './components/Header';
+import Home from './Pages/home';
+import Signup from './Pages/SignUp';
+import Profile from './Pages/Profile';
+import CharacterSheet from './Pages/CharacterSheet';
 import UpdateCharacter from './components/UpdateCharacter';
-import diceRoller from './Pages/DiceRoller'
 import DiceRoller from './Pages/DiceRoller';
 // import { QUERY_CHAR } from './utils/queries';
 
@@ -59,38 +59,38 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Switch>
-          <div className="flex-column justify-flex-start min-100-vh">
+        <Routes>
+          <React.Fragment className="flex-column justify-flex-start min-100-vh">
             <Header
               value={search}
               handleInputChange={handleInputChange}
               handleFormSubmit={handleFormSubmit}
             />
-            <div style={{ maxWidth: "fit-content", margin: "0 auto", minWidth: "170px" }}>
+            <React.Fragment style={{ maxWidth: "fit-content", margin: "0 auto", minWidth: "170px" }}>
               <Route exact path="/">
                 <Home
                   value={result}
                 />
               </Route>
-              <Route exact path="/login">
+              <Route exact path="/Login/index">
                 <Login />
               </Route>
-              <Route exact path="/signup">
+              <Route exact path="/Signup/index">
                 <Signup />
               </Route>
-              <Route exact path="/diceRoller">
+              <Route exact path="/DiceRoller/index">
                 <DiceRoller />
               </Route>
-              <Route exact path="/profile">
+              <Route exact path="/Profile/index">
                 <Profile />
               </Route>
-              <Route exact path="/createCharacter">
+              <Route exact path="/CharacterSheet/index">
                 <CharacterSheet />
               </Route>
-              <Route exact path="/updateCharacter" component={UpdateCharacter} />
-            </div>
-          </div>
-        </Switch>
+              <Route exact path="/UpdateCharacter" component={UpdateCharacter} />
+            </React.Fragment>
+          </React.Fragment>
+        </Routes>
       </Router>
     </ApolloProvider>
   )

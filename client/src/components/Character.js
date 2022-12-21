@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
+import Card from 'react-bootstrap/Card'
 import {
-  Card,
+  
   ListGroupItem,
   ListGroup,
   Col,
@@ -9,11 +10,11 @@ import {
   Button,
 } from "react-bootstrap";
 import { useMutation, useQuery } from "@apollo/client";
-import { DELETE_CHAR } from "../../utils/mutations";
-import Auth from "../../utils/auth";
-import { QUERY_ME } from "../../utils/queries";
+import { DELETE_CHARACTER } from "../Utils/mutations";
+import Auth from "../Utils/auth";
+import { QUERY_ME } from "../Utils/queries";
 const Character = ({ characters }) => {
-  const [removeChar] = useMutation(DELETE_CHAR);
+  const [removeChar] = useMutation(DELETE_CHARACTER);
   const { loading, data } = useQuery(QUERY_ME);
   const logThis = (data) => {};
   // const handleUpdateChar = async (characterId) => {
