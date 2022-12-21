@@ -15,15 +15,15 @@ import Auth from "../Utils/auth";
 import { QUERY_ME } from "../Utils/queries";
 const Character = ({ characters }) => {
   const [removeChar] = useMutation(DELETE_CHARACTER);
-  const { loading, data } = useQuery(QUERY_ME);
+  const { data } = useQuery(QUERY_ME);
   const logThis = (data) => {};
-  // const handleUpdateChar = async (characterId) => {
+  // const handleUpdateCharacter = async (characterId) => {
   //   const token = Auth.loggedIn() ? Auth.getToken() : null;
   //   if (!token) {
   //     return false;
   //   }
   //   try {
-  //     await updateChar({
+  //     await updateCharacter({
   //       variables: { characterId }
   //     })
   //   }
@@ -43,9 +43,7 @@ const Character = ({ characters }) => {
       console.error(err);
     }
   };
-  if (!characters.length) {
-    return <h3>No characters yet</h3>;
-  }
+  
   return (
     <div id="characterCards">
       <Row>
@@ -88,7 +86,7 @@ const Character = ({ characters }) => {
                 <Card.Body>
                   <Link
                     to={{
-                      pathname: "/updateChar",
+                      pathname: "/updateCharacter",
                       propsData: character,
                     }}
                   >

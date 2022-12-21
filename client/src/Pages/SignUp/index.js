@@ -28,7 +28,7 @@ const Signup = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addUser({
+      const { data } = await newUser({
         variables: { ...formState },
       });
 

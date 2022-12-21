@@ -36,7 +36,7 @@ const Home = ({ value }) => {
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
-                    <Characters characters={characters} />
+                    <Character characters={characters} />
                 )}
             </div>
         </main>
