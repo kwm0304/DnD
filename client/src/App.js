@@ -3,7 +3,7 @@ import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
 import { BrowserRouter as Router,  Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+//make landing page to hold neccessary components
 import Login from './Pages/Login/login';
 import Header from './components/Header';
 import Home from './Pages/home';
@@ -74,12 +74,8 @@ function App() {
                 />
               </Route>
 
-
-              <Route exact path="/Login">
-                <Login />
-              </Route>
-              <Route exact path="/Signup">
-
+              <Route exact path="/Login"><Login/></Route>
+              <Route exact path="/Signup" component={Signup}>
                 <Signup />
               </Route>
               <Route exact path="/Profile">

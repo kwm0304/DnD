@@ -86,7 +86,7 @@ const Character = ({ characters }) => {
                 <Card.Body>
                   <Link
                     to={{
-                      pathname: "/updateCharacter",
+                      pathname: "/UpdateCharacter",
                       propsData: character,
                     }}
                   >

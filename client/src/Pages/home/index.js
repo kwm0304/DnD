@@ -2,6 +2,10 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_CHARACTERS, QUERY_ONE_CHARACTER } from "../../Utils/queries";
 import Character from '../../components/Character'
+import Signup from "../SignUp";
+import Login from "../Login/login";
+
+
 const Home = ({ value }) => {
     // PULL CHARACTER LIST
     const { loading, data } = useQuery(QUERY_CHARACTERS);
@@ -27,7 +31,7 @@ const Home = ({ value }) => {
                     <div></div>
                 ) : (
                     <div>
-                        <Character character={character} />
+                        <Character character={Character} />
                     </div>
                 )}
                 {/* <Character character={character} /> */}
