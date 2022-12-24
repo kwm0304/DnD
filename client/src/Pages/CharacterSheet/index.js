@@ -28,7 +28,7 @@ function CharacterSheet() {
     event.preventDefault()
       try {
         const { stats } = createCharacter({
-          key: { update: formState}
+          key: { update : formState}
         });
       } catch (err) {
         console.log(err)

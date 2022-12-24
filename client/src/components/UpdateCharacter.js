@@ -28,7 +28,7 @@ const UpdateCharacter = (props) => {
         const { data } = UpdateCharacter({
           variables: {
             characterId: props.location.propsData._id,
-            characterInput: formState,
+            update: formState,
           },
         });
         

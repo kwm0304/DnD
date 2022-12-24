@@ -1,10 +1,10 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { DiceRoll } from "@dice-roller/rpg-dice-roller";
+import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 
 const DiceRoller = () => {
   const rollDice = () => {
-    const roll = new DiceRoll("4d6dl1");
+    const roll = new DiceRoller("4d6dl1");
     console.log(roll.output);
   };
 
