@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/dnd-db',
+  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/dnd',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
