@@ -16,7 +16,7 @@ let CharacterSchema = new Schema ({
         allowNull: false
     },
     //Combined need to be 75
-    stats: {
+    
         strength: {
             type: Number,
             required: true,
@@ -47,8 +47,8 @@ let CharacterSchema = new Schema ({
             type: Number,
             required: true,
             max: 15
-        }
-},
+        },
+
 spells: [{
     type: String,
     required: false
