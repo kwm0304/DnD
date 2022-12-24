@@ -1,9 +1,44 @@
-import React, {formState, handleChange } from 'react'
+import React, {formState, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import { CREATE_CHARACTER } from '../../Utils/mutations'
+import { useMutation } from '@apollo/client';
 
 function CharacterSheet() {
+
+  const [currentState, setCurrentState] = useState({
+    name: '',
+    image: '',
+    race: '',
+    class: '',
+    strength: '',
+    dexterity: '',
+    constitution: '',
+    intelligence: '',
+    wisdom: '',
+    charisma: '',
+    background: '',
+    alignment: '',
+    passivePerception: '',
+    proficiencyBonus: '',
+  })
+
+  const [createCharacter] = useMutation(CREATE_CHARACTER);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault()
+      try {
+        const { stats } = createCharacter({
+          key: { update: formState}
+        });
+      } catch (err) {
+        console.log(err)
+      }
+  }
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setCurrentState({...currentState, [name]: value})
+  }
   return (
     <Form>
       <Form.Group className="mb-3" controlId="charactername">
