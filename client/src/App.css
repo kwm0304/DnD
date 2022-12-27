@@ -2,10 +2,12 @@
   justify-content: space-evenly;
   display: flex;
 }
+
 #button {
 flex-direction: row;
 display: flex;
 }
+
 #homeTitle {
 background-color: #264c5e;
 color: lightblue;
@@ -14,19 +16,23 @@ padding: 10px;
 font-family: georgia;
 margin: 100px 100px 100px;
 }
+
 #cardBody {
   border: solid;
   border-color:aliceblue;
 }
+
 #text {
   font-size: 15;
 }
+
 #header, h1, header p {
   font-size: 15px;
   margin: 5px 0px 0px 50px;
   color:aliceblue;
   background-color: #264c5e;
 }
+
 #formTitle {
   font-family: georgia;
 }
@@ -34,6 +40,7 @@ margin: 100px 100px 100px;
 #profileHeader {
   color: aliceblue;
 }
+
 #charForm {
   background-color: lightblue;
   flex-direction: column;
