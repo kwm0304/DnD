@@ -1,20 +1,89 @@
-import React from "react";
-import { Form } from "react-bootstrap";
-import * as rpgDiceRoller from '@dice-roller/rpg-dice-roller';
 
-const DiceRoller = () => {
-  const rollDice = () => {
-    const roll = new DiceRoller("4d6dl1");
-    console.log(roll.output);
-  };
+var twentydice = {
+  sides: 20,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
 
-  return (
-    <Form className="flex-row justify-center">
-      <Form.Group className="card">
-        <button onClick={rollDice}>Roll dice</button>
-      </Form.Group>
-    </Form>
-  );
+var twelvedice = {
+  sides: 12,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
+
+
+
+//Prints dice roll to the page
+
+function printtwentyNumber(number) {
+  var placeholder = document.getElementById('twentyplaceholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('twentybutton');
+
+button.onclick = function() {
+  var result = twentydice.roll();
+  printNumber(result);
+};
+function printtwelveNumber(number) {
+  var placeholder = document.getElementById('twelveplaceholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('twelvebutton');
+
+button.onclick = function() {
+  var result = twentydice.roll();
+  printNumber(result);
+};
+function printtwentyNumber(number) {
+  var placeholder = document.getElementById('tenplaceholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('tenbutton');
+
+button.onclick = function() {
+  var result = twentydice.roll();
+  printNumber(result);
+};
+function printtwentyNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = twentydice.roll();
+  printNumber(result);
+};
+function printtwentyNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = fourdice.roll();
+  printNumber(result);
+};
+function printfourNumber(number) {
+  var placeholder = document.getElementById('fourplaceholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = fourdice.roll();
+  printNumber(result);
 };
 
-export default DiceRoller;
+

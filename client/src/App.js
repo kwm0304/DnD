@@ -12,6 +12,7 @@ import Profile from './Pages/Profile';
 import CharacterSheet from './Pages/CharacterSheet';
 import UpdateCharacter from './components/UpdateCharacter';
 import DiceRoller from './Pages/DiceRoller';
+import FantasyNameGenerator from './Pages/FantasyNameGenerator'
 // import { QUERY_CHAR } from './utils/queries';
 
 const httpLink = createHttpLink({
@@ -33,21 +34,7 @@ const authLink = setContext((_, { headers }) => {
 
 
 function App() {
-  const [search, setSearch] = useState('');
-  const [result, setResult] = useState('');
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setSearch('');
-  };
-
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputValue = target.value;
-    setSearch(inputValue);
-    setResult(inputValue);
-  };
-  console.log(result);
+  const [currentTab, setCurrentTab] = useState("Login");
 
   const httpLink = createHttpLink({
     uri: '/graphql',
@@ -57,17 +44,25 @@ function App() {
     link: httpLink,
     cache: new InMemoryCache(),
   });
-
+  const renderTab = () => {
+		switch (currentTab) {
+			case "DiceRoller":
+				return <DiceRoller />;
+			case "CharacterSheet":
+				return <CharacterSheet />;
+			case "FantasyNameGenerator":
+				return <FantasyNameGenerator />;
+			case "Profile":
+				return <Profile />;
+		}
+	};
   return (
     <ApolloProvider client={client}>
       <Router>
       <div className="flex-column justify-flex-start min-100-vh">
       <div style={{ maxWidth: "fit-content", margin: "0 auto", minWidth: "170px" }}>  
-            <Header
-              value={search}
-              handleInputChange={handleInputChange}
-              handleFormSubmit={handleFormSubmit}
-            />
+            <Header currentTab={currentTab} setCurrentTab={setCurrentTab}/>
+            <main>{renderTab()}</main>
             <Routes>
               <Route path="/" element={<Home />}
               />

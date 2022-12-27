@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../Utils/auth';
-import Nav from './Nav/index'
+import Nav from './Nav'
 
-const Header = ({ value, handleInputChange, handleFormSubmit }) => {
+function Header (props) {
+  const { currentTab, setCurrentTab } = props;
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
   return (
-    <header id="header">
-      <div id="nav">
+    <section id="nottheheader">
+      <div id="bar">
+      <Nav currentTab={currentTab} setCurrentTab={setCurrentTab} />
         <div style={{ marginLeft: "20px", display: "flex", flexDirection: "column" }}>
+        
           <Link className="text-light" style={{ textDecoration: "none" }} to="/">
             <h1 className="m-0"> D&D Slayers</h1>
           </Link>
@@ -19,16 +22,8 @@ const Header = ({ value, handleInputChange, handleFormSubmit }) => {
         </div>
         <div>
           {Auth.loggedIn() ? (
-            <div id="buttonLayout">
-              <Link className="btn btn-lg btn-info m-2" to="/"> Home </Link>
-              <Link className="btn btn-lg btn-info m-2" to="/Profile">
-                {Auth.getProfile().data.username}'s Profile
-              </Link>
-              <Link className="btn btn-lg btn-info m-2" to="/CharacterSheet">Create Character</Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
-                Logout
-              </button>
-
+            <div>
+            
             </div>
           ) : (
             <>
@@ -40,10 +35,11 @@ const Header = ({ value, handleInputChange, handleFormSubmit }) => {
               </Link>
             </>
           )}
-        </div>
       </div>
-    </header>
+      </div>
+    </section>
   );
 };
+
 
 export default Header;
