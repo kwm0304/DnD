@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Auth from '../Utils/auth';
+import Nav from './Nav/index'
 
 const Header = ({ value, handleInputChange, handleFormSubmit }) => {
   const logout = (event) => {
