@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
-import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //make landing page to hold neccessary components
+import Footer from './Pages/Footer'
 import Login from './Pages/Login/login';
 import Header from './components/Header';
 import Home from './Pages/home';
@@ -13,10 +14,11 @@ import CharacterSheet from './components/CharacterSheet';
 import UpdateCharacter from './components/UpdateCharacter';
 import DiceRoller from './Pages/DiceRoller';
 import FantasyNameGenerator from './Pages/FantasyNameGenerator'
+import { onError } from "@apollo/client/link/error";
 // import { QUERY_CHAR } from './utils/queries';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: '/graphql',
 });
 
 // Construct request middleware that will attach the JWT token to every request as an `authorization` header
@@ -32,18 +34,26 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+})
+
+// Log any GraphQL errors or network error that occurred
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.forEach(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+      )
+    );
+  if (networkError) console.log(`[Network error]: ${networkError}`);
+});
 
 function App() {
   const [currentTab, setCurrentTab] = useState("Login");
 
-  const httpLink = createHttpLink({
-    uri: '/graphql',
-  });
   
-  const client = new ApolloClient({
-    link: httpLink,
-    cache: new InMemoryCache(),
-  });
   const renderTab = () => {
 		switch (currentTab) {
 			case "DiceRoller":
@@ -80,6 +90,7 @@ function App() {
               />
               </Routes>
         </div>
+        <Footer />
           </div>
       </Router>
     </ApolloProvider>

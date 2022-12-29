@@ -18,7 +18,7 @@ const resolvers = {
       },
   
       character: async (parent, { characterId }, context) => {
-        const character = await Character.findById({
+        const character = await Character.findOne({
           _id: characterId,
         });
         return character;

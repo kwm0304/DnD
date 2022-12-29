@@ -16,6 +16,38 @@
 // }
 
 
+// var tendice = {
+//   sides: 10,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var eightdice = {
+//   sides: 8,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var sixdice = {
+//   sides: 6,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var fourdice = {
+//   sides: 4,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
 
 // //Prints dice roll to the page
 

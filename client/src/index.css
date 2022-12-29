@@ -1,0 +1,11 @@
+#homeimage {
+    background-image: url('../build/assets/image3.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-position: 80%;
+    text-align: center;
+}

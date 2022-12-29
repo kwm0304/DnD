@@ -49,13 +49,25 @@ margin: 100px 100px 100px;
   padding: 20px;
 }
 
-#homeimage {
+#root {
   background-color: black;
-  background-image: url("../public/assets/image5.jpeg");
+  background-image: url("../public/assets/image13.jpeg");
   background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
+}
+
+#homeimage {
+  background-image: url('../build/assets/image3.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: 80%;
+  text-align: center;
 }
