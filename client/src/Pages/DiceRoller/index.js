@@ -1,89 +1,121 @@
 
-var twentydice = {
-  sides: 20,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
+// var twentydice = {
+//   sides: 20,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
 
-var twelvedice = {
-  sides: 12,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
+// var twelvedice = {
+//   sides: 12,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var tendice = {
+//   sides: 10,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var eightdice = {
+//   sides: 8,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var sixdice = {
+//   sides: 6,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
+
+// var fourdice = {
+//   sides: 4,
+//   roll: function () {
+//     var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+//     return randomNumber;
+//   }
+// }
 
 
 
-//Prints dice roll to the page
+// //Prints dice roll to the page
 
-function printtwentyNumber(number) {
-  var placeholder = document.getElementById('twentyplaceholder');
-  placeholder.innerHTML = number;
-}
+// function printtwentyNumber(number) {
+//   var placeholder = document.getElementById('twentyplaceholder');
+//   placeholder.innerHTML = number;
+// }
 
-var button = document.getElementById('twentybutton');
+// var button = document.getElementById('twentybutton');
 
-button.onclick = function() {
-  var result = twentydice.roll();
-  printNumber(result);
-};
-function printtwelveNumber(number) {
-  var placeholder = document.getElementById('twelveplaceholder');
-  placeholder.innerHTML = number;
-}
+// button.onclick = function() {
+//   var result = twentydice.roll();
+//   printNumber(result);
+// };
+// function printtwelveNumber(number) {
+//   var placeholder = document.getElementById('twelveplaceholder');
+//   placeholder.innerHTML = number;
+// }
 
-var button = document.getElementById('twelvebutton');
+// var button = document.getElementById('twelvebutton');
 
-button.onclick = function() {
-  var result = twentydice.roll();
-  printNumber(result);
-};
-function printtwentyNumber(number) {
-  var placeholder = document.getElementById('tenplaceholder');
-  placeholder.innerHTML = number;
-}
+// button.onclick = function() {
+//   var result = twentydice.roll();
+//   printNumber(result);
+// };
+// function printtwentyNumber(number) {
+//   var placeholder = document.getElementById('tenplaceholder');
+//   placeholder.innerHTML = number;
+// }
 
-var button = document.getElementById('tenbutton');
+// var button = document.getElementById('tenbutton');
 
-button.onclick = function() {
-  var result = twentydice.roll();
-  printNumber(result);
-};
-function printtwentyNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
-}
+// button.onclick = function() {
+//   var result = twentydice.roll();
+//   printNumber(result);
+// };
+// function printtwentyNumber(number) {
+//   var placeholder = document.getElementById('placeholder');
+//   placeholder.innerHTML = number;
+// }
 
-var button = document.getElementById('button');
+// var button = document.getElementById('button');
 
-button.onclick = function() {
-  var result = twentydice.roll();
-  printNumber(result);
-};
-function printtwentyNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
-}
+// button.onclick = function() {
+//   var result = twentydice.roll();
+//   printNumber(result);
+// };
+// function printtwentyNumber(number) {
+//   var placeholder = document.getElementById('placeholder');
+//   placeholder.innerHTML = number;
+// }
 
-var button = document.getElementById('button');
+// var button = document.getElementById('button');
 
-button.onclick = function() {
-  var result = fourdice.roll();
-  printNumber(result);
-};
-function printfourNumber(number) {
-  var placeholder = document.getElementById('fourplaceholder');
-  placeholder.innerHTML = number;
-}
+// button.onclick = function() {
+//   var result = fourdice.roll();
+//   printNumber(result);
+// };
+// function printfourNumber(number) {
+//   var placeholder = document.getElementById('fourplaceholder');
+//   placeholder.innerHTML = number;
+// }
 
-var button = document.getElementById('button');
+// var button = document.getElementById('button');
 
-button.onclick = function() {
-  var result = fourdice.roll();
-  printNumber(result);
-};
+// button.onclick = function() {
+//   var result = fourdice.roll();
+//   printNumber(result);
+// };
 
 
