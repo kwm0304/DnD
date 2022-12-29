@@ -1,3 +1,13 @@
+#homeTitle {
+    color: white;
+    font-size: x-large;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    background-color: steelblue;
+    padding: 10px;
+    font-family: monospace;
+}
 #cardBody {
     border: solid;
     border-color: white;
@@ -59,18 +69,13 @@ header h1, p {
     padding: 0px;
 }
 
-#homeTitle {
-    color: white;
-    font-size: x-large;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 100px;
-    background-color: steelblue;
-    padding: 10px;
-    font-family: monospace;
-}
 
 
 img {
     max-height: 150px;
+}
+.footer-pin {
+    position: relative;
+    left:0;
+    bottom: 0;
 }
