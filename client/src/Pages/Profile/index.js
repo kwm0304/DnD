@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Character from '../../components/Character';
-import UpdateCharacter from '../../components/UpdateCharacter';
+// import UpdateCharacter from '../../components/UpdateCharacter';
 import Auth from '../../Utils/auth';
 import { QUERY_MY_CHARACTERS, QUERY_ME } from '../../Utils/queries';
 
@@ -11,7 +11,6 @@ const Profile = () => {
   const { loading, data } = useQuery(userParam ? QUERY_MY_CHARACTERS : QUERY_ME, {
     variables: { username: userParam },
   });
-
 
   const user = data?.me || data?.user || {};
   // redirect to personal profile page if username is yours
