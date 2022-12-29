@@ -1,3 +1,17 @@
+#navbar {
+display: flex;
+flex-direction: column;
+margin-left: 20px;
+background-color: steelblue;
+justify-content: space-between;
+color: white;
+font-family: monospace;
+}
+#header, h1, p {
+    background-color: steelblue;
+    margin-bottom: 45px;
+    color: white;
+}
 #homeTitle {
     color: white;
     font-size: x-large;
@@ -31,21 +45,6 @@
 
 #text {
     font-size: 14px;
-}
-
-#header {
-    background-color: lightslategray;
-    margin-bottom: 45px;
-}
-
-header h1, p {
-    margin: 1px;
-    font-size: 15px;
-    color:black;
-}
-#nav {
-    display: flex;
-    justify-content: space-between;
 }
 
 #profileHeader {
