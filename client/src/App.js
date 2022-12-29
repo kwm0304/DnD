@@ -72,8 +72,8 @@ function App() {
               />
               <Route path="/Profile" element={<Profile />}
               />
-              <Route path="/DiceRoller" element={<DiceRoller />}
-              />
+              {/* <Route path="/DiceRoller" element={<DiceRoller />} */}
+              {/* /> */}
               <Route path="/CharacterSheet" element={<CharacterSheet />}
               />
               <Route path="/UpdateCharacter" element={<UpdateCharacter />}

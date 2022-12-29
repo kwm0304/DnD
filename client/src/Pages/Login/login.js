@@ -6,7 +6,7 @@ import { LOGIN_USER } from '../../Utils/mutations';
 import Auth from '../../Utils/auth';
 
 const Login = () => {
-    const [formState, setFormState] = useState({ password: '' });
+    const [formState, setFormState] = useState({ username: '', password: '' });
     const [login, { error }] = useMutation(LOGIN_USER);
 
     // update state based on form input changes

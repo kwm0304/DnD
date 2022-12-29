@@ -10,7 +10,7 @@ const Signup = () => {
     password: "",
   });
 
-  const [createUser, { error, data }] = useMutation(CREATE_USER);
+  const [createUser, { error }] = useMutation(CREATE_USER);
 
 
   // update state based on form input changes
@@ -51,7 +51,7 @@ const Signup = () => {
                 name="username"
                 type="username"
                 id="username"
-                value={formState.username}
+                value={formState.name}
                 onChange={handleChange}
               />
               <input
