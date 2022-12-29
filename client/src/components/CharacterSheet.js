@@ -1,10 +1,12 @@
 import React, {formState, useState } from 'react'
 // import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { CREATE_CHARACTER } from '../../Utils/mutations'
+import { CREATE_CHARACTER } from '../Utils/mutations'
 import { useMutation } from '@apollo/client';
 
-function CharacterSheet() {
+// function CharacterSheet() {
+
+const CharacterSheet = () =>{
 
   const [currentState, setCurrentState] = useState({
     name: '',
@@ -28,7 +30,9 @@ function CharacterSheet() {
     event.preventDefault()
       try {
         const { stats } = createCharacter({
-          key: { update : formState}
+          variables: { characterInput : formState },
+          // const { stats } = createCharacter({
+          //   key: { update : formState}
         });
       } catch (err) {
         console.log(err)
@@ -40,7 +44,7 @@ function CharacterSheet() {
     setCurrentState({...currentState, [name]: value})
   }
   return (
-    <Form>
+    <Form onSubmit={handleFormSubmit}>
       <Form.Group className="mb-3" controlId="charactername">
         <Form.Label>Character Name</Form.Label>
         <Form.Control
@@ -117,6 +121,6 @@ function CharacterSheet() {
       </Form.Group>
     </Form>
   );
-}
+};
 
 export default CharacterSheet;

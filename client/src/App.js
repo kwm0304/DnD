@@ -9,7 +9,7 @@ import Header from './components/Header';
 import Home from './Pages/home';
 import Signup from './Pages/SignUp';
 import Profile from './Pages/Profile';
-import CharacterSheet from './Pages/CharacterSheet';
+import CharacterSheet from './components/CharacterSheet';
 import UpdateCharacter from './components/UpdateCharacter';
 import DiceRoller from './Pages/DiceRoller';
 import FantasyNameGenerator from './Pages/FantasyNameGenerator'
@@ -72,8 +72,8 @@ function App() {
               />
               <Route path="/Profile" element={<Profile />}
               />
-              <Route path="/DiceRoller" element={<DiceRoller />}
-              />
+              {/* <Route path="/DiceRoller" element={<DiceRoller />} */}
+              {/* /> */}
               <Route path="/CharacterSheet" element={<CharacterSheet />}
               />
               <Route path="/UpdateCharacter" element={<UpdateCharacter />}

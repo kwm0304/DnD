@@ -15,6 +15,7 @@
 //   }
 // }
 
+
 // var tendice = {
 //   sides: 10,
 //   roll: function () {
@@ -46,7 +47,6 @@
 //     return randomNumber;
 //   }
 // }
-
 
 
 // //Prints dice roll to the page
