@@ -33,7 +33,7 @@ const Profile = () => {
   return (
     <div>
       <div className=''>
-                <img src={require('../../../public/assets/image15.jpeg')} alt="profile-img" className='profile' />
+                <img src={require('../../assets/image15.jpeg')} alt="profile-img" className='profile' />
             </div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <h1 id="profileHeader">

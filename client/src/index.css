@@ -1,11 +1,76 @@
-#homeimage {
-    background-image: url('../build/assets/image3.jpeg');
+#cardBody {
+    border: solid;
+    border-color: white;
+}
+
+#background-image {
+    background-color: black;
+    background-image: url("./assets/image15.jpeg");
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-attachment: fixed;
-    background-position: 80%;
-    text-align: center;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    
+}
+
+#formTitle {
+    font-family: fantasy;
+}
+
+#text {
+    font-size: 14px;
+}
+
+#header {
+    background-color: lightslategray;
+    margin-bottom: 45px;
+}
+
+header h1, p {
+    margin: 1px;
+    font-size: 15px;
+    color:black;
+}
+#nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+#profileHeader {
+    color: white;
+}
+
+#charForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    background-color: tan;
+    padding: 20px;
+}
+
+#buttonLayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.ul {
+    padding: 0px;
+}
+
+#homeTitle {
+    color: white;
+    font-size: x-large;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px;
+    background-color: steelblue;
+    padding: 10px;
+    font-family: monospace;
+}
+
+
+img {
+    max-height: 150px;
 }
