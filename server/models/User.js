@@ -1,34 +1,39 @@
-//kenan
-const { Schema, model } = require('mongoose')
-const bcrypt = require ('bcrypt')
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const UserSchema = new Schema(
-    {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true
-        },
-          password: {
-            type: String,
-            required: true,
-            minlength: 5
-          },
-          characters: [{
-            type: Schema.ObjectId,
-            ref: "Character"
-          }],
+// import schema from Book.js
+const characterSchema = require("./Character");
+
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
     },
-    {
+    password: {
+      type: String,
+      required: true,
+    },
+    // set savedBooks to be an array of data that adheres to the bookSchema
+    characters: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Character",
+      },
+    ],
+  },
+  // set this to use virtual below
+  {
     toJSON: {
-      virtuals: true
-    }
+      virtuals: true,
+    },
   }
 );
 
-UserSchema.pre('save', async function(next) {
-  if (this.isNew || this.isModified('password')) {
+// hash user password
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -36,14 +41,11 @@ UserSchema.pre('save', async function(next) {
   next();
 });
 
-// compare the incoming password with the hashed password
-UserSchema.methods.isCorrectPassword = async function(password) {
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-UserSchema.virtual('characterCount').get(function() {
-  return this.friends.length;
-});
+const User = model("user", userSchema);
 
-let User = model("User", UserSchema)
-module.exports = User
+module.exports = User;

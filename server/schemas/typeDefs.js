@@ -5,7 +5,7 @@ type User {
     _id: ID!
     username: String
     password: String
-    character: [Character]
+    characters: [Character]
 }
 
 type Character {
@@ -27,14 +27,14 @@ type Character {
     proficiencyBonus: Int
     passivePerception: Int
     weapons: String
-    background: String
+    
 }
 
 input update {
     name: String!
-    race: String
+    race: String!
     image: String
-    class: String
+    class: String!
     background: String
     strength: Int
     dexterity: Int
@@ -56,16 +56,17 @@ type Auth {
 
 type Query {
     me: User
+    user(username: String!): User
     allCharacters: [Character]
     character(characterId: ID): Character
     userCharacters: [Character]
 }
 
 type Mutation {
-    createUser(username: String, password: String): Auth
-    login(password: String!): Auth
+    createUser(username: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
     deleteCharacter(characterId: ID): User
-    createCharacter(update: update): Character
+    createCharacter(update: String)
     updateCharacter(characterId: ID, update: update): User 
 }`
 

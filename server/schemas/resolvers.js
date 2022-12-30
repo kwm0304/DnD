@@ -16,7 +16,11 @@ const resolvers = {
   
         throw new AuthenticationError("Not logged in");
       },
-  
+      user: async (parent, { username }) => {
+        return User.findOne({ username })
+        .select("-v -password")
+        .populate("characters")
+      },
       character: async (parent, { characterId }, context) => {
         const character = await Character.findOne({
           _id: characterId,
@@ -40,6 +44,8 @@ const resolvers = {
         
         return characters;
       },
+
+      
     },
   
     Mutation: {
@@ -47,12 +53,12 @@ const resolvers = {
         const user = await User.create(args);
         const token = signToken(user);
   
-        return { token, user };
+        return { token, User };
       },
   
-      login: async (parent, { password }) => {
+      login: async (parent, { username, password }) => {
         const user = await User.findOne({ username });
-  
+  console.log(username)
         if (!user) {
           throw new AuthenticationError("No user found with this username");
         }
