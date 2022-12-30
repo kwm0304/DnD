@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Footer() {
+export default function Footer() {
     return(
+    <Footer className="footer.pin">
         <div>Made by our group</div>
-    )
+        </Footer>
+    );
 }
-
-export default Footer;
