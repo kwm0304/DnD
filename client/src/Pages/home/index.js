@@ -2,9 +2,6 @@ import React from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_CHARACTERS, QUERY_ONE_CHARACTER } from "../../Utils/queries";
 import Character from '../../components/Character'
-import Signup from "../SignUp";
-import Login from "../Login/login";
-
 
 const Home = ({ value }) => {
     // PULL CHARACTER LIST
@@ -17,6 +14,7 @@ const Home = ({ value }) => {
     const characters = data?.getAllCharacters || [];
     const character = dataD?.character || [];
     console.log(character.name);
+    
     return (
         <main className="text-blue-100 bg-blue-500 body-font">
             <div id="backgroundColor">
@@ -34,7 +32,6 @@ const Home = ({ value }) => {
                         <Character character={Character} />
                     </div>
                 )}
-                {/* <Character character={character} /> */}
             </div>
             <div>
                 {loading ? (
