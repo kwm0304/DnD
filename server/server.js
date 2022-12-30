@@ -1,89 +1,52 @@
-// const express = require('express');
-// const { ApolloServer } = require('apollo-server-express');
-// const path = require('path');
-// require('dotenv').config()
-// const { typeDefs, resolvers } = require('./schemas');
-// const { authMiddleware } = require('./utils/auth');
-// const db = require('./config/connection');
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
+const { authMiddleware } = require("../");
+const { typeDefs, resolvers } = require("./schemas");
+const db = require("./config/connection");
 
-
-// const PORT = process.env.PORT || 3001
-// ;
-// const app = express();
-// const server = new ApolloServer({
-//   typeDefs,
-//   resolvers,
-//   context: authMiddleware,
-// });
-
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
-
-
-
-
-
-// const startApolloServer = async (typeDefs, resolvers) => {
-//   await server.start();
-//   server.applyMiddleware({ app });
-
-//   db.once('open', () => {
-//   app.listen(PORT, () => {
-//     console.log(`API server running on port ${PORT}!`);
-//     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-//   });
-// });
-// }
-
-// startApolloServer(typeDefs, resolvers);
-
-  
-const express = require('express');
-// import ApolloServer
-const { ApolloServer } = require('apollo-server-express');
-
-// import our typeDefs and resolvers
-const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
-
-
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
-const PORT = process.env.PORT || 3001
-;
-
-const app = express();
-
+// Initialize Apollo server with type defs, resolvers, and middleware
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: authMiddleware,
 });
 
+// db.dropDatabase();
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// Initialize express server
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async (typeDefs, resolvers) => {
-await server.start();
-// integrate our Apollo server with the Express application as middleware
-server.applyMiddleware({ app });
+// Express middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: "50mb" }));
 
-db.once('open', () => {
+const root = require("path").join(__dirname, "../client", "build");
+app.use(express.static(root));
+
+// if we're in production, serve client/build as static assets
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile("index.html", { root });
+  });
+}
+
+// Start apollo server function
+const startApolloServer = async () => {
+  // waits for server to start before applying middleware
+  await server.start();
+  server.applyMiddleware({ app });
+
+  // Once db is open open server and log to console
+  db.once("open", () => {
     app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      // log where we can go to test our GQL API
-      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })
-  })
+      console.log(
+        `Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`
+      );
+      console.log(`🌍 Now listening on http://localhost:${PORT}`);
+    });
+  });
 };
 
-// Call the async function to start the server
-startApolloServer(typeDefs, resolvers);
+// start apollo server
+startApolloServer();

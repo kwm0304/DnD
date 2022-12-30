@@ -1,75 +1,78 @@
-const {Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 
-
-let CharacterSchema = new Schema ({
-    name: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    race: {
-        type: String,
-        allowNull: false
-    },
-    class: {
-        type: String,
-        allowNull: false
-    },
-    //Combined need to be 75
-    
-        strength: {
-            type: Number,
-            required: true,
-            max: 15
-        },
-        dexterity: {
-            type: Number,
-            required: true,
-            max: 15
-        },
-        constitution: {
-            type: Number,
-            required: true,
-            max: 15
-        },
-        intelligence: {
-            type: Number,
-            required: true,
-            max: 15
-
-        },
-        wisdom: {
-            type: Number,
-            required: true,
-            max: 15
-        },
-        charisma: {
-            type: Number,
-            required: true,
-            max: 15
-        },
-
-spells: [{
-    type: String,
-    required: false
-}],
-proficiencyBonus: {
-    type: Number,
-    required: false
-},
-passivePerception: {
-    type: Number,
-    required: false
-},
-weapons: {
+const userSchema = require("./User");
+// This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedBooks` array in User.js
+const characterSchema = new Schema({
+    //figure out how to call userid
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  },
+  name: {
     type: String,
     required: true
-},
-background: {
+  },
+
+  level: {
+    type: String
+  },
+
+  hitPoints: {
+    type: String
+  },
+
+  weapons: {
+    type: String
+  },
+
+  alignment: {
+    type: String
+  },
+
+  background: {
+    type: String
+  },
+
+  strength: {
+    type: String
+  },
+  dexterity: {
+    type: String
+  },
+  constitution: {
+    type: String
+  },
+  intelligence: {
+    type: String
+  },
+  wisdom: {
+    type: String
+  },
+
+  charisma: {
+    type: String
+  },
+
+  items: {
+    type: String
+  },
+
+  image: {
+    type: String
+  },
+  link: {
+    type: String
+  },
+  race: {
     type: String,
     required: true
-},
+  },
+  class: {
+    type: String,
+    required: true
+  }
+});
 
-})
-let Character = model("Character", CharacterSchema)
-module.exports = Character
+const Character = model("Character", characterSchema);
+
+module.exports = Character;

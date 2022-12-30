@@ -27,11 +27,9 @@ export const CREATE_USER = gql`
 `;
 
 export const CREATE_CHARACTER = gql`
-mutation createCharacter($characterInput: characterInput) {
-  createCharacter(characterInput: $characterInput) {
-    username
-    password
-    characters {
+mutation createCharacter($update: update) {
+  createCharacter(update: $update) {
+    userId
       name
       race
       image
@@ -49,14 +47,10 @@ mutation createCharacter($characterInput: characterInput) {
       alignment
       proficiencyBonus
       passivePerception
-      user {
-        username
-      }
-      items
     }
-  }
 }
 `;
+//Need to attach user id to character object
 
 export const UPDATE_CHARACTER = gql`
 mutation updateCharacter($characterId: ID, $characterInput: characterInput) {
