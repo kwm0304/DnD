@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { CREATE_CHARACTER } from '../../Utils/mutations'
+import { CREATE_CHARACTER } from '../Utils/mutations'
 import { useMutation } from '@apollo/client';
 
 // function CharacterSheet() {
